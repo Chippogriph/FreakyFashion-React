@@ -34,8 +34,8 @@ const SiteHeader = () => {
   };
 
   return (
-    <header className="flex flex-wrap py-4">
-      <div className="flex flex-col sm:flex-row w-full px-7">
+    <header className="flex flex-wrap">
+      <div className="flex flex-col sm:flex-row w-full px-7 pt-4 pb-8 bg-[#b1dcdd93]">
         <Link to={"/"}>
           <div className="text-center sm:mr-5">
             <img

@@ -11,6 +11,7 @@ import SearchResults from "./pages/SearchResults";
 import { ProductProvider } from "./context/ProductContext";
 import { CartProvider } from "./context/CartContext";
 import { SearchProvider } from "./context/SearchContext";
+import OrderConfirmation from "./pages/OrderConfirmation";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/search" element={<SearchResults />} />
+              <Route path="/order-confirmation" element={<OrderConfirmation />} />
             </Route>
 
             {/* Adminvieww */}
