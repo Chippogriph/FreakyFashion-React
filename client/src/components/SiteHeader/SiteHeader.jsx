@@ -2,11 +2,13 @@ import { useRef, useContext } from "react";
 import Navbar from "../Navbar/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import SearchContext from "../../context/SearchContext";
+import useCart from "../../hooks/useCart";
 
 const SiteHeader = () => {
   const searchRef = useRef(null);
   const navigate = useNavigate();
   const { updateSearchResults } = useContext(SearchContext);
+  const { cart } = useCart();
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -32,8 +34,8 @@ const SiteHeader = () => {
   };
 
   return (
-    <header className="flex flex-wrap my-4 mx-7">
-      <div className="flex flex-col sm:flex-row w-full">
+    <header className="flex flex-wrap py-4">
+      <div className="flex flex-col sm:flex-row w-full px-7">
         <Link to={"/"}>
           <div className="text-center sm:mr-5">
             <img
@@ -63,7 +65,16 @@ const SiteHeader = () => {
               className="fa-solid fa-heart text-[#276B6C] hover:text-[#73B8B7]"
             ></a>
             <Link to={"/cart"}>
-              <i className="fa-solid fa-basket-shopping text-[#276B6C] hover:text-[#73B8B7] relative"></i>
+              <i className="fa-solid fa-basket-shopping text-[#276B6C] hover:text-[#73B8B7] relative">
+                {cart.length > 0 && (
+                  <span className="absolute -bottom-2 -right-2 text-sm bg-[#E3B885] w-6 h-6 text-white font-bold rounded-full flex items-center justify-center">
+                    {cart.reduce(
+                      (total, item) => total + Number(item.quantity),
+                      0
+                    )}
+                  </span>
+                )}
+              </i>
             </Link>
           </div>
         </div>

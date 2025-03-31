@@ -1,6 +1,6 @@
 function Hero() {
     return (
-        <section className="rounded-lg p-4 shadow-2xl mb-10 w-full flex flex-col lg:flex-row-reverse">
+        <section className="rounded-lg p-4 shadow-2xl mb-10 w-full flex flex-col lg:flex-row-reverse bg-white">
             <div className="w-full lg:flex-2">
                 <img src="../../images/hero.webp" alt="Hero" className="rounded-md object-cover w-full"/>
             </div>
